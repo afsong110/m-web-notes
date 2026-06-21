@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐鱼体育 · 常来常新</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #2c2e30;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.8rem 3rem;
+        }
+
+        /* ---- hero ---- */
+        .hero {
+            margin-bottom: 3.2rem;
+        }
+
+        .hero__label {
+            display: inline-block;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #7e8a94;
+            background: #eef1f4;
+            padding: 0.3rem 0.9rem;
+            border-radius: 20px;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero__title {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.2;
+            color: #1a1d20;
+        }
+
+        .hero__title em {
+            font-style: normal;
+            color: #1e7b5c;
+        }
+
+        .hero__desc {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #555e66;
+            max-width: 640px;
+        }
+
+        .hero__meta {
+            display: flex;
+            gap: 1.6rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #6b7680;
+            border-top: 1px solid #e4e8ec;
+            padding-top: 1.2rem;
+        }
+
+        .hero__meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        /* ---- section ---- */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        section:last-of-type {
+            margin-bottom: 2.8rem;
+        }
+
+        .section__title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1f2327;
+            margin-bottom: 0.7rem;
+            letter-spacing: -0.01em;
+            border-left: 3px solid #1e7b5c;
+            padding-left: 0.8rem;
+        }
+
+        .section__body {
+            font-size: 0.98rem;
+            color: #40464d;
+            margin-bottom: 0.6rem;
+        }
+
+        .section__body a {
+            color: #1a6d50;
+            text-decoration: none;
+            border-bottom: 1px solid #b9cfc3;
+            transition: border-color 0.2s;
+        }
+
+        .section__body a:hover {
+            border-bottom-color: #1a6d50;
+        }
+
+        .section__list {
+            list-style: none;
+            margin-top: 0.8rem;
+        }
+
+        .section__list li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.55rem;
+            font-size: 0.95rem;
+            color: #3f474e;
+        }
+
+        .section__list li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #8a9aa8;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.1rem 1.2rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            border: 1px solid #ebedf0;
+            transition: box-shadow 0.15s;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+
+        .card__title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 0.3rem;
+            color: #23282c;
+        }
+
+        .card__text {
+            font-size: 0.87rem;
+            color: #5d6872;
+            line-height: 1.5;
+        }
+
+        /* ---- faq / subtle ---- */
+        .faq-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .faq-item__q {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #1a1d20;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item__a {
+            font-size: 0.9rem;
+            color: #58626c;
+            padding-left: 0.5rem;
+            border-left: 2px solid #dee3e9;
+            padding-left: 0.8rem;
+        }
+
+        /* ---- footer ---- */
+        .footer-note {
+            border-top: 1px solid #e2e6ea;
+            padding-top: 1.8rem;
+            margin-top: 0.8rem;
+            text-align: left;
+            font-size: 0.88rem;
+            color: #55606b;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .footer-note a {
+            color: #1a6d50;
+            text-decoration: none;
+            border-bottom: 1px solid #b9cfc3;
+        }
+
+        .footer-note a:hover {
+            border-bottom-color: #1a6d50;
+        }
+
+        .footer-note .tag {
+            color: #8a99a6;
+            font-size: 0.78rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ---- responsive ---- */
+        @media (max-width: 600px) {
+            .page {
+                padding: 1.6rem 1.2rem 2.5rem;
+            }
+            .hero__title {
+                font-size: 1.8rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 0.7rem;
+            }
+            .hero__meta {
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+            .section__title {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .hero__title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <div class="hero__label">MAGAZINE · 常访</div>
+        <h1 class="hero__title">再次回到<em>乐鱼体育</em><br>不止于一场比赛</h1>
+        <p class="hero__desc">收藏一份习惯，持续关注赛场的律动与节奏。每一次回访，都更接近你想要的深度资讯与完整体验。</p>
+        <div class="hero__meta">
+            <span>📌 已收藏</span>
+            <span>🔄 持续更新</span>
+            <span>⚡ 即刻进入状态</span>
+        </div>
+    </div>
+
+    <!-- 1：背景与访问习惯 -->
+    <section>
+        <h2 class="section__title">从收藏到常来</h2>
+        <p class="section__body">
+            对很多用户而言，<a href="https://m-web-leyu.com.cn">乐鱼体育</a> 并不只是一个需要反复搜索的地址，而是一个可以保存、再回访的内容坐标。收藏它的页面，相当于为自己留了一扇随时打开的窗——赛事资讯、数据更新、专栏解读，都能在熟悉的界面中自然获取。与其每次重新寻找入口，不如将高质量的信息源固定在浏览器或桌面，让访问路径变得简短直接。
+        </p>
+        <p class="section__body">
+            从使用场景来看，体育迷的浏览节奏往往是间歇性的：周中快速扫一眼赛果，周末深入阅读专题。这种「短访+沉浸」交替的模式，恰好需要一个稳定、轻量且内容密度不低的平台来承载。而收藏行为本身，就是一种主动的信息筛选——你选择了它，它便值得你反复翻阅。
+        </p>
+    </section>
+
+    <!-- 2：三个差异维度 (卡片) -->
+    <section>
+        <h2 class="section__title">持续关注的三个支点</h2>
+        <div class="card-grid">
+            <div class="card">
+                <div class="card__title">📋 赛程与数据沉淀</div>
+                <div class="card__text">每轮比赛的实时比分、历史交锋记录、积分变动，都以结构化方式呈现，便于回顾与对比。</div>
+            </div>
+            <div class="card">
+                <div class="card__title">🧭 专题策划的连续性</div>
+                <div class="card__text">从赛季前瞻到关键战役复盘，专题内容按时间线组织，新访客也能快速理解上下文。</div>
+            </div>
+            <div class="card">
+                <div class="card__title">🔖 个人阅读痕迹</div>
+                <div class="card__text">收藏链接、记住偏好页面，实际上是为自己建立了一个定制化的信息走廊——下次再来，无缝衔接。</div>
+            </div>
+            <div class="card">
+                <div class="card__title">🔄 更新节奏可预期</div>
+                <div class="card__text">内容团队保持稳定的输出频率，每天都有新素材、新分析，不会让常访者感到停滞。</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3：场景化 —— 再次访问的细节 -->
+    <section>
+        <h2 class="section__title">再次访问时，你在寻找什么</h2>
+        <p class="section__body">
+            可能是昨晚焦点战的技术统计，也可能是某位球员的赛季走势图。当你把 <a href="https://m-web-leyu.com.cn">乐鱼体育</a> 加入书签或收藏夹，你实际上是在对自己说：「这个信息源值得我再次打开。」而再次打开时，你不希望重新适应界面，也不需要重复搜索——一切都留在上次离开的位置附近。这种低摩擦的回归体验，正是持续关注的核心价值之一。
+        </p>
+        <ul class="section__list">
+            <li>快速找到之前读到一半的专栏或深度稿</li>
+            <li>对比同一赛事不同阶段的数据变化</li>
+            <li>在熟悉的导航结构里发现新更新</li>
+            <li>免去每次验证真伪或甄别来源的精力消耗</li>
+        </ul>
+    </section>
+
+    <!-- 简明 FAQ 摘要 -->
+    <section>
+        <h2 class="section__title">常见疑问摘要</h2>
+        <div class="faq-item">
+            <div class="faq-item__q">如何保持页面更新？</div>
+            <div class="faq-item__a">建议将链接保存至浏览器书签栏，或添加到手机主屏幕。内容平台自动刷新，无需手动检查版本。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-item__q">收藏后会不会失效？</div>
+            <div class="faq-item__a">域名长期有效，且移动端与桌面端共用同一入口，收藏一次即可覆盖所有设备访问场景。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-item__q">内容偏向哪些体育项目？</div>
+            <div class="faq-item__a">覆盖主流联赛与杯赛，包括足球、篮球、网球及综合性赛事，资讯维度较广。</div>
+        </div>
+    </section>
+
+    <!-- footer 访问提示 -->
+    <div class="footer-note">
+        <div>
+            将 <a href="https://m-web-leyu.com.cn">乐鱼体育</a> 添加到您的常用访问列表，每次打开都是一次新的对话。不需要记住复杂的路径，也不需要从零开始浏览——它一直在那里，等你回来。
+        </div>
+        <div class="tag">
+            — 杂志专题 · 常访者笔记 —<br>
+            保持收藏，保持在场。
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
